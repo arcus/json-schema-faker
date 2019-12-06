@@ -1,9 +1,10 @@
 module.exports = {
   register(jsf) {
     return jsf.option({
-      useDefaultValue: true,
-      alwaysFakeOptionals: true,
       refDepth: 6,
+      minItems: 1,
+      maxItems: 1,
+      alwaysFakeOptionals: true,
     });
   },
 };

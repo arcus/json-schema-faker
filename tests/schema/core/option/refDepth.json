@@ -32,7 +32,33 @@
           },
           "required": ["collection"]
         },
-        "equal": "Hello",
+        "equal": {
+          "collection": {
+            "a": {
+              "subA": [
+                {
+                  "subA": [
+                    {
+                      "subA": [
+                        {
+                          "subA": [
+                            {
+                              "subA": [
+                                {
+                                  "subA": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
         "require": "core/option/refDepth"
       }
     ]

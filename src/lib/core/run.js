@@ -117,7 +117,7 @@ function resolve(obj, data, values, property) {
 // TODO provide types
 function run(refs, schema, container) {
   let depth = 0;
-  const refDepth = optionAPI('ignoreMissingRefs') || random.number(0, 3);
+  const refDepth = optionAPI('refDepth') || random.number(0, 3);
   let lastRef;
 
   try {
