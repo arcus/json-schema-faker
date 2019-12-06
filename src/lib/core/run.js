@@ -117,6 +117,7 @@ function resolve(obj, data, values, property) {
 // TODO provide types
 function run(refs, schema, container) {
   let depth = 0;
+  const refDepth = optionAPI('ignoreMissingRefs') || random.number(0, 3);
   let lastRef;
 
   try {
@@ -136,7 +137,7 @@ function run(refs, schema, container) {
 
       if (typeof sub.$ref === 'string') {
         // increasing depth only for repeated refs seems to be fixing #258
-        if (sub.$ref === '#' || (lastRef === sub.$ref && ++depth > random.number(0, 3))) {
+        if (sub.$ref === '#' || (lastRef === sub.$ref && ++depth > refDepth - 1)) {
           delete sub.$ref;
           return sub;
         }
